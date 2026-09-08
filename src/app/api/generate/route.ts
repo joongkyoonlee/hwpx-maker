@@ -75,7 +75,8 @@ ${brief}
     const hwpxBytes = await htmlToHwpx(finalHtml);
 
     // 4. Return as downloadable file
-    return new NextResponse(hwpxBytes, {
+    return new NextResponse(new Blob([hwpxBytes]), {
+
       status: 200,
       headers: {
         'Content-Type': 'application/vnd.hancom.hwpx',
